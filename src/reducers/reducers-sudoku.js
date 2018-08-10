@@ -1,4 +1,4 @@
-import { GET_SUDOKU, SET_DIFFICULTY } from './actions';
+import { GET_SUDOKU, SET_DIFFICULTY, SET_FIELD_VALUE } from '../actions';
 import sudoku from 'sudoku-umd';
 
 const initialState = {
@@ -16,11 +16,20 @@ const reducers =  function(state = initialState, action){
       const level = state.difficulty;
       const sudokuString = sudoku.generate(level);
       return {
-        ...state,
+        difficulty: level,
         board: sudokuString,
         initialBoard: sudokuString
       }
-
+    case SET_FIELD_VALUE:
+      // kopia
+      const board = [...state.board];
+      // do arraya
+      board.split('');
+      board[action.id] = action.val
+      board.join()
+      return {
+        ...state, board
+      }
     default:
       return state;
   }

@@ -4,6 +4,7 @@ export const CHECK_SUDOKU = 'CHECK_SUDOKU';
 export const SOLVE_SUDOKU = 'SOLVE_SUDOKU';
 export const RESTART_SUDOKU = 'RESTART_SUDOKU';
 export const LOG_STATE = 'LOG_STATE';
+export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 
 
 export function setDifficulty(difficulty) {
@@ -23,4 +24,9 @@ export function logState(state) {
     type: GET_SUDOKU,
     state
   }
+}
+
+export function setFieldValue(id, val){
+  id,
+  val
 }
