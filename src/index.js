@@ -14,10 +14,5 @@ ReactDOM.render(
 document.getElementById('root'));
 
 // TESTY
-const test = store.dispatch(setDifficulty('hard'));
-console.log(test);
-
-const getSudokuTest = store.dispatch(getSudoku());
-console.log(getSudokuTest);
-
-console.log(store.getState());
+store.dispatch(setDifficulty('hard'));
+store.dispatch(getSudoku());
