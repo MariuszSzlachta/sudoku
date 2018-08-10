@@ -27,6 +27,9 @@ export function logState(state) {
 }
 
 export function setFieldValue(id, val){
-  id,
-  val
+  return {
+    type: SET_FIELD_VALUE,
+    id,
+    val
+  }
 }

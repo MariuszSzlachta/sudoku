@@ -22,11 +22,12 @@ const reducers =  function(state = initialState, action){
       }
     case SET_FIELD_VALUE:
       // kopia
-      const board = [...state.board];
+      let board = [...state.board];
       // do arraya
       board.split('');
-      board[action.id] = action.val
-      board.join()
+      // board[action.id] = action.val;
+      // board.join();
+      console.log(board);
       return {
         ...state, board
       }
