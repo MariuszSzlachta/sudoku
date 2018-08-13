@@ -26,10 +26,10 @@ export function logState(state) {
   }
 }
 
-export function setFieldValue(id, val){
+export function setFieldValue(ind, val){
   return {
     type: SET_FIELD_VALUE,
-    id,
+    ind,
     val
   }
 }

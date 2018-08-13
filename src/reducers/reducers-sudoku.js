@@ -21,16 +21,16 @@ const reducers =  function(state = initialState, action){
         initialBoard: sudokuString
       }
     case SET_FIELD_VALUE:
-      // kopia
-      let board = [...state.board];
-      // do arraya
-      board.split('');
-      // board[action.id] = action.val;
-      // board.join();
+      const board = [...state.board];
       console.log(board);
-      return {
-        ...state, board
-      }
+      const newBoard = board.map(el => {
+        if (board.indexOf(el) === action.id){
+          return el = action.val
+        }
+      })
+      newBoard.join('')
+      return Object.assign({}, state, {board: newBoard})
+
     default:
       return state;
   }
