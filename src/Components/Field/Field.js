@@ -5,7 +5,6 @@ const field = (props) => {
   if (props.val === '.'){
     value = ''
   }
-  let index = props.ind;
   return (
     <div>
       <input
@@ -14,9 +13,7 @@ const field = (props) => {
         min="1"
         max="9"
         value={value}
-        onChange={(index, event) => props.setFieldValue(index, event.target.value)}
-
-
+        onChange={(event) => props.setFieldValue(props.ind, event.target.value)}
       />
     </div>
   );
