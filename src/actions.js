@@ -40,8 +40,14 @@ export function resetSudoku(){
   }
 }
 
-export function solveSudoku() {
+export function solveSudoku(){
   return {
     type: SOLVE_SUDOKU
+  }
+}
+
+export function checkSudoku(){
+  return {
+    type: CHECK_SUDOKU
   }
 }

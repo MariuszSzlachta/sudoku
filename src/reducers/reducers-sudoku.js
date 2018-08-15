@@ -1,10 +1,11 @@
-import { GET_SUDOKU, SET_DIFFICULTY, SET_FIELD_VALUE, RESET_SUDOKU, SOLVE_SUDOKU } from '../actions';
+import { GET_SUDOKU, SET_DIFFICULTY, SET_FIELD_VALUE, RESET_SUDOKU, SOLVE_SUDOKU, CHECK_SUDOKU } from '../actions';
 import sudoku from 'sudoku-umd';
 
 const initialState = {
   initialBoard: '',
   board: '',
-  difficulty: 'easy'
+  difficulty: 'easy',
+  check: false
 }
 
 const reducers =  function(state = initialState, action){
@@ -27,13 +28,22 @@ const reducers =  function(state = initialState, action){
       return {...state, board: newBoard}
 
     case RESET_SUDOKU:
-      const resetedBoard = [...state.initialBoard]
+      const resetedBoard = [ ...state.initialBoard ]
       resetedBoard.join('')
       return { ...state, board: resetedBoard }
 
     case SOLVE_SUDOKU:
-      const solvedSudoku = sudoku.solve([...state.board]);
-      return { ...state, board: solvedSudoku}
+      const solvedSudoku = sudoku.solve( [...state.board] );
+      return { ...state, board: solvedSudoku }
+
+    case CHECK_SUDOKU:
+      const check = sudoku.solve([...state.board]);
+      if (check) {
+        return { ...state, check: true }
+      } else {
+        return { ...state, check: false }
+      }
+
     default:
       return state;
   }
