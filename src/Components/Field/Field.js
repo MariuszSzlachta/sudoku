@@ -2,9 +2,18 @@ import React from 'react';
 
 const field = (props) => {
   let value = props.val;
+  let isDisabled = null;
+
+  if (props.val !== '.') {
+    isDisabled = 'disabled'
+  }
+  console.log(isDisabled);
+
+
   if (props.val === '.'){
     value = ''
   }
+  
   return (
     <div>
       <input
@@ -14,6 +23,7 @@ const field = (props) => {
         max="9"
         value={value}
         onChange={(event) => props.setFieldValue(props.ind, event.target.value)}
+        disabled={isDisabled}
       />
     </div>
   );

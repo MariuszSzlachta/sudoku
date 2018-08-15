@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from '../../store';
-import { getSudoku } from '../../actions';
+import { getSudoku, resetSudoku } from '../../actions';
 
 import Board from '../Board/BoardContainer';
 
@@ -9,6 +9,9 @@ class App extends Component {
 
   getSudoku() {
     store.dispatch(getSudoku());
+  }
+  resetSudoku() {
+    store.dispatch(resetSudoku());
   }
 
   render() {
@@ -19,7 +22,7 @@ class App extends Component {
           <button>Check</button>
           <button onClick={this.getSudoku} >New Game</button>
           <button>Solve</button>
-          <button>Reset</button>
+          <button onClick={this.resetSudoku}>Reset</button>
         </div>
       </div>
     );

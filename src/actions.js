@@ -2,7 +2,7 @@ export const SET_DIFFICULTY = 'SET-DIFFICULTY';
 export const GET_SUDOKU = 'GET_SUDOKU';
 export const CHECK_SUDOKU = 'CHECK_SUDOKU';
 export const SOLVE_SUDOKU = 'SOLVE_SUDOKU';
-export const RESTART_SUDOKU = 'RESTART_SUDOKU';
+export const RESET_SUDOKU = 'RESET_SUDOKU';
 export const LOG_STATE = 'LOG_STATE';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 
@@ -31,5 +31,11 @@ export function setFieldValue(ind, val){
     type: SET_FIELD_VALUE,
     ind,
     val
+  }
+}
+
+export function resetSudoku(){
+  return {
+    type: RESET_SUDOKU
   }
 }
