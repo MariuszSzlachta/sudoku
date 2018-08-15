@@ -39,3 +39,9 @@ export function resetSudoku(){
     type: RESET_SUDOKU
   }
 }
+
+export function solveSudoku() {
+  return {
+    type: SOLVE_SUDOKU
+  }
+}
