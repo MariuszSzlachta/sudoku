@@ -6,4 +6,10 @@ const mapDispatchToProps = dispatch => {
   return { setFieldValue: (index, val) => dispatch(setFieldValue(index, val)) }
 }
 
-export default connect(null, mapDispatchToProps)(Field);
+const mapStateToProps = store => {
+  return {
+    initialBoard: store.sudokuReducer.initialBoard
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Field);

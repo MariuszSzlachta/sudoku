@@ -21,6 +21,7 @@ const reducers =  function(state = initialState, action){
         board: sudokuString,
         initialBoard: sudokuString
       }
+
     case SET_FIELD_VALUE:
       let newBoard = [...state.board]
       newBoard.splice(action.ind, 1 , action.val)

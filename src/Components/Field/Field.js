@@ -3,19 +3,21 @@ import React from 'react';
 const field = (props) => {
   let value = props.val;
   let isDisabled = null;
+  let initialBoard = props.initialBoard.split('');
+  console.log(initialBoard.indexOf(props.ind -1 ))
 
-  if (props.val !== '.') {
+  if (props.val !== '.' && initialBoard.indexOf(props.ind) !== '.') {
     isDisabled = 'disabled'
   }
-  console.log(isDisabled);
-
 
   if (props.val === '.'){
     value = ''
   }
-  
+
+
+
   return (
-    <div>
+    <div className="field">
       <input
         type="number"
         name="quantity"

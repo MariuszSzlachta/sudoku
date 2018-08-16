@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import Board from './Board';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = store => {
   return {
-    board: state.sudokuReducer.board
+    board: store.sudokuReducer.board
   }
 }
 export default connect(mapStateToProps)(Board);
