@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from '../../store';
-import { getSudoku, resetSudoku, solveSudoku, checkSudoku } from '../../actions';
+import { getSudoku, resetSudoku, solveSudoku, checkSudoku, undoMove } from '../../actions';
 
 import Board from '../Board/BoardContainer';
 
@@ -29,15 +29,20 @@ class App extends Component {
     }
   }
 
+  undoMoveHandler(){
+    store.dispatch(undoMove());
+  }
+
   render() {
     return (
       <div className="App">
         <Board />
-        <div>
-          <button onClick={this.checkSudoku}>Check</button>
-          <button onClick={this.getSudoku}>New Game</button>
-          <button onClick={this.solveSudoku}>Solve</button>
-          <button onClick={this.resetSudoku}>Reset</button>
+        <div className="btn-container">
+          <button className="btn" onClick={this.checkSudoku}>Check</button>
+          <button className="btn" onClick={this.getSudoku}>New Game</button>
+          <button className="btn" onClick={this.solveSudoku}>Solve</button>
+          <button className="btn" onClick={this.resetSudoku}>Reset</button>
+          <button className="btn" onClick={this.undoMoveHandler}>Undo</button>
         </div>
       </div>
     );

@@ -5,6 +5,7 @@ export const SOLVE_SUDOKU = 'SOLVE_SUDOKU';
 export const RESET_SUDOKU = 'RESET_SUDOKU';
 export const LOG_STATE = 'LOG_STATE';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
+export const UNDO_MOVE = 'UNDO_MOVE';
 
 
 export function setDifficulty(difficulty) {
@@ -49,5 +50,11 @@ export function solveSudoku(){
 export function checkSudoku(){
   return {
     type: CHECK_SUDOKU
+  }
+}
+
+export function undoMove(){
+  return {
+    type: UNDO_MOVE
   }
 }
