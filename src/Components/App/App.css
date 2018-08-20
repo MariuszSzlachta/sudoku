@@ -2,11 +2,11 @@
   text-align: center;
 }
 .btn-container {
-  margin-top: 5%;
+  margin: 100px auto 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 50%;
 }
 
 .btn {

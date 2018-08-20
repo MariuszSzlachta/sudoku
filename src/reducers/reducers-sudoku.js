@@ -20,7 +20,8 @@ const reducers =  function(state = initialState, action){
       return {
         difficulty: level,
         board: sudokuString,
-        initialBoard: sudokuString
+        initialBoard: sudokuString,
+        pastBoard: sudokuString
       }
 
     case SET_FIELD_VALUE:
@@ -48,7 +49,7 @@ const reducers =  function(state = initialState, action){
       }
 
     case UNDO_MOVE:
-      let undo = [...state.pastBoard];
+      let undo = [ ...state.pastBoard ];
       return { ...state, board: undo }
 
     default:

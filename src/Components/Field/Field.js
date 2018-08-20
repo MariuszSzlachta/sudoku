@@ -4,7 +4,7 @@ const field = (props) => {
   let value = props.val;
   let isDisabled = null;
   let initialBoard = props.initialBoard.split('');
-  
+
   if (props.val !== '.' && initialBoard[props.ind] !== '.') {
     isDisabled = 'disabled'
   }
