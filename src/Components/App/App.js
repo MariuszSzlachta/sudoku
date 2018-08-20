@@ -35,7 +35,7 @@ class App extends Component {
         <Board />
         <div>
           <button onClick={this.checkSudoku}>Check</button>
-          <button onClick={this.getSudoku} >New Game</button>
+          <button onClick={this.getSudoku}>New Game</button>
           <button onClick={this.solveSudoku}>Solve</button>
           <button onClick={this.resetSudoku}>Reset</button>
         </div>

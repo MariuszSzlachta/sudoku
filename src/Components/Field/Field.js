@@ -4,9 +4,8 @@ const field = (props) => {
   let value = props.val;
   let isDisabled = null;
   let initialBoard = props.initialBoard.split('');
-  console.log(initialBoard.indexOf(props.ind -1 ))
-
-  if (props.val !== '.' && initialBoard.indexOf(props.ind) !== '.') {
+  
+  if (props.val !== '.' && initialBoard[props.ind] !== '.') {
     isDisabled = 'disabled'
   }
 

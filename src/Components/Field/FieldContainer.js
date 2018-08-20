@@ -6,9 +6,12 @@ const mapDispatchToProps = dispatch => {
   return { setFieldValue: (index, val) => dispatch(setFieldValue(index, val)) }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = state => {
+  const { initialBoard } = state.sudokuReducer;
+  const { board } = state.sudokuReducer;
   return {
-    initialBoard: store.sudokuReducer.initialBoard
+    initialBoard,
+    board
   }
 }
 
