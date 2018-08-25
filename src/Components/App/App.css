@@ -1,4 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  padding: 12px;
   text-align: center;
 }
 .btn-container {
@@ -17,10 +24,33 @@
   outline: 0;
   background: transparent;
   text-transform: lowercase;
-  font-size: 80%;
+  font-size: 90%;
   transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .btn:hover {
   border-color: orangered;
   color: orangered;
+}
+
+@media (max-width: 1024px) {
+  .btn-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 580px) {
+  .btn-container {
+    flex-direction: column;
+    margin: 10px;
+    width: 100%;
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
 }

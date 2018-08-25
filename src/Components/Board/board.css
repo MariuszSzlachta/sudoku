@@ -1,22 +1,46 @@
 .board {
-  margin: 2em auto;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 540px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-auto-rows: minmax(auto, 60px);
+  border: 2px solid black;
+  margin: auto;
+  max-width: 600px;
 }
 .field {
-  width: 60px;
-  height: 60px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .field input {
   box-sizing: border-box;
-  outline: 0;
-  border: 1px solid #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   width: 100%;
   height: 100%;
+  border: 0;
+  padding: 2px;
+  outline: none;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.field input:disabled {
+  background-color: #eee;
+  color: black;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+
+@media (max-width: 400px) {
+  .board {
+    grid-auto-rows: minmax(auto, 40px);
+  }
+  .field input {
+    font-size: 1.2rem;
+  }
 }
