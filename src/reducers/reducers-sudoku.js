@@ -37,7 +37,7 @@ const reducers =  function(state = initialState, action){
       return { ...state, board: resetedBoard }
 
     case SOLVE_SUDOKU:
-      const solvedSudoku = sudoku.solve( [...state.board] );
+      const solvedSudoku = sudoku.solve( [...state.initialBoard] );
       return { ...state, board: solvedSudoku }
 
     case CHECK_SUDOKU:

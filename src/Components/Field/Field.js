@@ -1,4 +1,5 @@
 import React from 'react';
+import './Field.css';
 
 const field = (props) => {
   let value = props.val;

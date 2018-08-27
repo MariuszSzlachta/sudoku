@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from '../../store';
-import { getSudoku, resetSudoku, solveSudoku, checkSudoku, undoMove } from '../../actions';
+import { getSudoku, resetSudoku, solveSudoku, checkSudoku, undoMove, setDifficulty } from '../../actions';
 
 import Board from '../Board/BoardContainer';
 
@@ -19,7 +19,7 @@ class App extends Component {
     store.dispatch(solveSudoku());
   }
 
-  checkSudoku(){
+  checkSudoku() {
     store.dispatch(checkSudoku())
     const stateCheck = store.getState(store.sudokuReducer);
     if (stateCheck.sudokuReducer.check) {
@@ -29,6 +29,10 @@ class App extends Component {
     }
   }
 
+  setDifficulty(difficulty){
+    store.dispatch(setDifficulty(difficulty));
+  }
+
   undoMoveHandler(){
     store.dispatch(undoMove());
   }
@@ -36,13 +40,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="App__title">Sudoku</h1>
         <Board />
         <div className="btn-container">
-          <button className="btn" onClick={this.checkSudoku}>Check</button>
+          <select onChange={ (event) => this.setDifficulty(event.target.value) } name="sudoku-difficulty" class="select">
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+            <option value="very hard">very hard</option>
+            <option value="insane">insane</option>
+            <option value="inhuman">inhuman</option>
+          </select>
           <button className="btn" onClick={this.getSudoku}>New Game</button>
-          <button className="btn" onClick={this.solveSudoku}>Solve</button>
-          <button className="btn" onClick={this.resetSudoku}>Reset</button>
+          <button className="btn" onClick={this.checkSudoku}>Check</button>
           <button className="btn" onClick={this.undoMoveHandler}>Undo</button>
+          <button className="btn" onClick={this.resetSudoku}>Reset</button>
+          <button className="btn" onClick={this.solveSudoku}>Solve</button>
         </div>
       </div>
     );
