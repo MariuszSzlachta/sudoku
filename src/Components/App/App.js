@@ -7,6 +7,11 @@ import Board from '../Board/BoardContainer';
 
 class App extends Component {
 
+  componentDidMount() {
+    store.dispatch(setDifficulty('easy'));
+    store.dispatch(getSudoku());
+  }
+
   getSudoku() {
     store.dispatch(getSudoku());
   }
@@ -43,7 +48,7 @@ class App extends Component {
         <h1 className="App__title">Sudoku</h1>
         <Board />
         <div className="btn-container">
-          <select onChange={ (event) => this.setDifficulty(event.target.value) } name="sudoku-difficulty" class="select">
+          <select onChange={ (event) => this.setDifficulty(event.target.value) } name="sudoku-difficulty" className="select">
             <option value="easy">easy</option>
             <option value="medium">medium</option>
             <option value="hard">hard</option>

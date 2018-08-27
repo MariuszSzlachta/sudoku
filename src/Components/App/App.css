@@ -57,11 +57,12 @@ body {
     height: 100%;
   }
   .btn-container {
-    margin: 30px auto 20px;
+    margin: 30px auto 40px;
   }
 }
 @media (max-width: 768px) {
   .btn-container {
+    margin-bottom: 30px;
     width: 90%;
   }
 }
@@ -69,7 +70,7 @@ body {
 @media (max-width: 580px) {
   .btn-container {
     flex-wrap: wrap;
-    margin: 10px 0;
+    margin: 20px 0 30px;
     width: 100%;
   }
   .btn,
