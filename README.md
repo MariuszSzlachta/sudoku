@@ -14,10 +14,10 @@ using technologies:
 - Sudoku-umd 1.0.1
 
 ## How to run
-$ Download project from my github and unpack
-$ cd sudoku-master
-$ npm install
-$ npm start
+- Download project from my github and unpack
+- cd sudoku-master
+- npm install
+- npm start
 
 ## Functionality
 1. Difficulty options - sets difficulty of sudoku you can choose between 'easy, medium, hard, very-hard, insane, inhuman'.
