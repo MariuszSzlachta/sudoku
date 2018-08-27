@@ -23,9 +23,9 @@ class App extends Component {
     store.dispatch(checkSudoku())
     const stateCheck = store.getState(store.sudokuReducer);
     if (stateCheck.sudokuReducer.check) {
-      alert('Dobrze Ci idzie')
+      alert('You\'re PRO! xD');
     } else {
-      alert('To nie ta cyfra')
+      alert('You missed :P Choose another number!');
     }
   }
 
