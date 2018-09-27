@@ -1,6 +1,6 @@
 .field {
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 
 .field input {
@@ -8,16 +8,18 @@
   width: 100%;
   height: 100%;
   border: 0;
+  border-radius: 4px;
   padding: 2px;
   outline: none;
   font-family: 'Lato', sans-serif;
   font-size: 2rem;
   text-align: center;
+  background-color: #f7d794;
 }
 
 .field input:disabled {
-  background-color: #eee;
-  color: black;
+  background-color: #f5cd79;
+  color: #2d3436;
 }
 input[type=number] {
   -moz-appearance: textfield;
